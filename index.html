@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyber Security Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#0E1F6B;
+    --blue-mid:#16308F;
+    --panel:rgba(255,255,255,.06);
+    --panel-border:rgba(255,255,255,.12);
+    --cyan:#3FC7F4;
+    --text:#EAF0FF;
+    --muted:#9FB0DD;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:linear-gradient(180deg,var(--blue-deep),var(--blue-mid) 40%,var(--blue-deep));
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+  }
+  main{max-width:640px;margin:0 auto;padding:50px 20px 100px;}
+
+  .profile-head{display:flex;align-items:center;gap:18px;margin-bottom:30px;}
+  .avatar{
+    width:76px;height:76px;border-radius:50%;overflow:hidden;flex-shrink:0;
+    border:2px solid rgba(255,255,255,.2);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;}
+  .profile-head h1{font-size:22px;font-weight:700;}
+  .profile-head .role{color:var(--cyan);font-size:15px;font-weight:500;margin-top:2px;}
+  .profile-head .loc{color:var(--muted);font-size:13.5px;margin-top:4px;}
+
+  .nav-links{display:flex;justify-content:center;gap:40px;margin:26px 0;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:15px;}
+
+  .cv-btn{
+    display:block;text-align:center;background:var(--panel);border:1px solid var(--panel-border);
+    color:var(--cyan);text-decoration:none;padding:14px;border-radius:14px;font-weight:600;
+    backdrop-filter:blur(6px);margin-bottom:24px;
+  }
+
+  .card{
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:20px;
+    padding:26px;backdrop-filter:blur(6px);margin-bottom:20px;
+  }
+  .card h2{font-size:19px;font-weight:700;margin-bottom:14px;}
+  .card p{color:var(--muted);font-size:14.5px;line-height:1.7;margin-bottom:20px;}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
+  .pill{
+    background:rgba(255,255,255,.05);border:1px solid var(--panel-border);
+    padding:9px 16px;border-radius:12px;font-size:13.5px;color:var(--text);
+  }
+
+  .info-row{
+    display:flex;justify-content:space-between;background:rgba(255,255,255,.04);
+    border:1px solid var(--panel-border);border-radius:12px;padding:14px 16px;margin-bottom:10px;font-size:14px;
+  }
+  .info-row .k{color:var(--text);font-weight:600;}
+  .info-row .v{color:var(--muted);}
+
+  .tabs{display:flex;gap:10px;margin-bottom:24px;}
+  .tab-btn{
+    flex:1;text-align:center;padding:11px;border-radius:20px;font-size:14px;font-weight:600;
+    border:1px solid var(--panel-border);color:var(--muted);cursor:pointer;background:transparent;
+  }
+  .tab-btn.active{background:linear-gradient(90deg,var(--cyan),#2E86DE);color:#06122E;border-color:transparent;}
+
+  .tab-panel{display:none;}
+  .tab-panel.show{display:block;}
+
+  .timeline{border-left:2px solid rgba(255,255,255,.15);padding-left:22px;}
+  .titem{position:relative;padding-bottom:26px;}
+  .titem::before{content:"";position:absolute;left:-28px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--cyan);}
+  .titem h3{font-size:16px;font-weight:600;}
+  .titem .when{color:var(--muted);font-size:12.5px;margin:3px 0 8px;}
+  .titem p{color:var(--muted);font-size:13.5px;line-height:1.6;}
+
+  .cert-item{
+    background:rgba(255,255,255,.04);border:1px solid var(--panel-border);border-radius:12px;
+    padding:16px 18px;margin-bottom:10px;
+  }
+  .cert-item h3{font-size:15px;font-weight:600;margin-bottom:4px;}
+  .cert-item .when{color:var(--muted);font-size:12.5px;}
+
+  .edu-card{
+    background:rgba(255,255,255,.04);border:1px solid var(--panel-border);border-radius:14px;
+    padding:20px;margin-bottom:14px;
+  }
+  .edu-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .edu-card .school{color:var(--cyan);font-size:13px;margin-bottom:10px;}
+  .edu-card p{color:var(--muted);font-size:13.5px;line-height:1.6;}
+
+  .contact-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .contact-links a{
+    background:rgba(255,255,255,.05);border:1px solid var(--panel-border);
+    color:var(--cyan);text-decoration:none;padding:10px 20px;border-radius:12px;font-size:14px;font-weight:600;
+  }
+
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;}
+</style>
+</head>
+<body>
+<main>
+
+  <div class="profile-head">
+    <div class="avatar"><img src="profile-photo-cyber.png" alt="Profile photo"></div>
+    <div>
+      <h1>Your Name</h1>
+      <div class="role">Cyber Security Engineer</div>
+      <div class="loc">Your City, Country</div>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Blog</a>
+    <a href="#">Projects</a>
+  </div>
+
+  <a class="cv-btn" href="#">Download CV</a>
+
+  <div class="card">
+    <h2>About Me</h2>
+    <p>Write 2-3 sentences here about your background — e.g. "Cybersecurity professional focused on threat detection and incident response. Passionate about breaking down complex systems to find and fix what others miss."</p>
+
+    <h2>Skills</h2>
+    <div class="pill-row">
+      <span class="pill">Malware Analysis</span>
+      <span class="pill">Offensive Security</span>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Vulnerability Assessment</span>
+      <span class="pill">Forensics</span>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Threat Hunting</span>
+      <span class="pill">Python</span>
+      <span class="pill">C++</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Personal</h2>
+    <div class="info-row"><span class="k">Email</span><span class="v">your.email@example.com</span></div>
+    <div class="info-row"><span class="k">Phone</span><span class="v">upon request</span></div>
+
+    <h2 style="margin-top:20px;">Key Facts</h2>
+    <div class="info-row"><span class="k">Experience</span><span class="v">X+ years</span></div>
+    <div class="info-row"><span class="k">Languages</span><span class="v">English, Hindi</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="exp">Experience</button>
+      <button class="tab-btn" data-tab="cert">Certifications</button>
+    </div>
+
+    <div class="tab-panel show" id="exp">
+      <div class="timeline">
+        <div class="titem">
+          <h3>Cyber Security Engineer — Company Name</h3>
+          <div class="when">Since Month, Year</div>
+          <p>What you manage day-to-day — e.g. monitoring, incident response, tools used.</p>
+        </div>
+        <div class="titem">
+          <h3>SOC Analyst — Company Name</h3>
+          <div class="when">Month Year — Month Year</div>
+          <p>Key responsibilities and technologies you worked with in this role.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="cert">
+      <div class="cert-item">
+        <h3>Certification Name</h3>
+        <div class="when">Issued Month, Year</div>
+      </div>
+      <div class="cert-item">
+        <h3>Certification Name</h3>
+        <div class="when">Issued Month, Year</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Academic Qualifications</h2>
+    <div class="edu-card">
+      <h3>Degree Name</h3>
+      <div class="school">Institution Name</div>
+      <p>Focus area — e.g. cybersecurity, network security, ethical hacking.</p>
+    </div>
+    <div class="edu-card">
+      <h3>High School / Diploma</h3>
+      <div class="school">Institution Name</div>
+      <p>Relevant foundation courses or achievements.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Contacts</h2>
+    <p style="margin-bottom:14px;">Explore my professional profiles:</p>
+    <div class="contact-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+
+  <footer>Sample portfolio — replace all placeholder text with your real details before sharing.</footer>
+
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabs.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      panels.forEach(p=>p.classList.toggle('show', p.id === btn.dataset.tab));
+    });
+  });
+</script>
+
+</body>
+</html>
